@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import { Button } from "@material-ui/core";
 
 function App() {
   return (
+    // TODO: make stuff
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -17,6 +19,8 @@ function App() {
         >
           Learn React
         </a>
+        <br/>
+        <Button variant="outlined" color="primary">Heelo theere! </Button>
       </header>
     </div>
   );
