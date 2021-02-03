@@ -1,10 +1,10 @@
 import React from 'react'
-import { Grid, Typography, Box, Divider } from "@material-ui/core";
+import { Grid, Typography, Box } from "@material-ui/core";
 import { yellow, grey } from "@material-ui/core/colors/index";
 
 export function GridLeft() {
     return (
-        <Grid item xs={6} justify="space-between">
+        <Grid xs={5} alignContent="flex-end" style={{ height: "100%" }}>
             <Grid item>
 
                 <Grid container >
@@ -35,7 +35,7 @@ export function GridLeft() {
                 </Grid>
 
             </Grid>
-            <Grid item style={{ marginTop: "60%" }}>
+            <Grid item style={{ marginTop: "65%" }}>
                 <Typography variant="h5" color="textPrimary">
                     Sign In !
 					</Typography>

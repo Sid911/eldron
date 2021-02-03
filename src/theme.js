@@ -1,5 +1,6 @@
 import { createMuiTheme } from "@material-ui/core";
 import "@material-ui/core/colors/index";
+import { yellow } from "@material-ui/core/colors";
 
 const theme = createMuiTheme({
 	neon: {
@@ -7,6 +8,9 @@ const theme = createMuiTheme({
 	},
 	palette: {
 		type: "dark",
+		primary: {
+			main: yellow["A400"]
+		},
 	},
 });
 
