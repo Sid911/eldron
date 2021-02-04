@@ -4,6 +4,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@material-ui/core/styles";
 import Theme from "./theme";
 import App from "./Components/App";
+import "./index.css"
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 ReactDOM.render(
