@@ -1,4 +1,8 @@
 const initState = {
+    user: {
+        Password: "",
+        OrgKey: ""
+    },
     recent: [],
     pinned: [],
 }

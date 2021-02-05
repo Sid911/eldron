@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import firebase from "firebase/app"
+import "firebase/auth"
 import { Grid, Typography, Box, TextField, Button } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors/index";
 
@@ -16,6 +18,7 @@ export class GridForm extends Component {
     }
     handleSubmit = (e) => {
         console.log(this.state);
+        firebase.auth().signInWithEmailAndPassword(this.state.Email, this.state.Password)
     }
     render() {
         return (
