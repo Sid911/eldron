@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={logged ? Dashboard : LoginPage} />
+          <Route exact path="" component={logged ? Dashboard : LoginPage} />
         </Switch>
       </BrowserRouter>
     );
