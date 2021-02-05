@@ -34,11 +34,12 @@ export class GridForm extends Component {
                         </Typography>
                     </Grid>
                     <Grid container alignContent="space-between">
+
                         <Grid item>
                             <form autoComplete="false" noValidate>
                                 <TextField id="Orgnization key" onChange={this.handleChange} label="Orgnization key (if present)" variant="outlined" color="primary" style={{ width: "100%" }} />
-                                <TextField required id="Email" onChange={this.handleChange} label="Email" variant="outlined" color="primary" style={{ width: "100%", marginTop: 5 }} />
-                                <TextField required id="Password" onChange={this.handleChange} label="Password" variant="outlined" color="primary" type="password" style={{ width: "100%", marginTop: 5 }} />
+                                <TextField required id="Email" onChange={this.handleChange} label="Email" variant="outlined" color="primary" style={{ width: "100%", marginTop: 10 }} />
+                                <TextField required id="Password" onChange={this.handleChange} label="Password" variant="outlined" color="primary" type="password" style={{ width: "100%", marginTop: 10 }} />
                             </form>
                         </Grid>
                         <Grid container justify="space-between">

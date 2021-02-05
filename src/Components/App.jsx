@@ -2,7 +2,7 @@ import { Component } from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LoginPage from "./Login/Login"
 import { connect } from 'react-redux'
-import Dashboard from "./Homepage/dashboard"
+import Dashboard from "./Dashboard/dashboard"
 
 class App extends Component {
 
