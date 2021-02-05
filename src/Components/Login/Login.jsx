@@ -1,7 +1,7 @@
 import React from "react";
 import { GridLeft } from "./GridInfo"
 import { GridForm } from "./GridLoginForm"
-import { Grid, Divider } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 export default function Login() {
 

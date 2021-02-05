@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Typography, Box, Container } from "@material-ui/core";
+import { Grid, Typography, Box } from "@material-ui/core";
 import { yellow, grey } from "@material-ui/core/colors/index";
 
 export function GridLeft() {
