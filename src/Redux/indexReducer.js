@@ -16,8 +16,6 @@ const rrfConfig = {
     userProfile: 'users',
     useFirestoreForProfile: true, // Firestore for Profile instead of Realtime DB
     enableClaims: true, // Get custom claims along with the profile
-    presence: 'presence', // where list of online users is stored in database
-    sessions: 'sessions' // where list of user sessions is stored in database (presence must be enabled)// Get custom claims along with the profile
 }
 init()
 
@@ -27,7 +25,7 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 let data = createStore(rootReducer, composeEnhancers(applyMiddleware(thunkMiddleware.withExtraArgument(getFirebase, getFirestore), loggerMiddleware))
 )
 //let persistor = persistStore(data);
-var rrfProps = {
+const rrfProps = {
     firebase,
     config: rrfConfig,
     dispatch: data.dispatch,

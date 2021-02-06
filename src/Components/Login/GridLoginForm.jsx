@@ -1,14 +1,18 @@
 import React, { Component } from 'react'
 import firebase from "firebase/app"
-import "firebase/auth"
 import { Grid, Typography, Box, TextField, Button } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors/index";
 
-export class GridForm extends Component {
+import { setUserEncryption } from '../../Redux/Actions/dataAction'
+import { connect } from 'react-redux'
+
+
+
+class GridForm extends Component {
     state = {
         'Email': "",
         'Password': "",
-        'Orgnization key': "",
+        'OrgnizationKey': "",
     }
 
     handleChange = (e) => {
@@ -17,7 +21,7 @@ export class GridForm extends Component {
         })
     }
     handleSubmit = (e) => {
-        console.log(this.state);
+        this.props.setEncryption(this.state.Password, this.state.OrgnizationKey)
         firebase.auth().signInWithEmailAndPassword(this.state.Email, this.state.Password)
     }
     render() {
@@ -37,7 +41,7 @@ export class GridForm extends Component {
 
                         <Grid item>
                             <form autoComplete="false" noValidate>
-                                <TextField id="Orgnization key" onChange={this.handleChange} label="Orgnization key (if present)" variant="outlined" color="primary" style={{ width: "100%" }} />
+                                <TextField id="OrgnizationKey" onChange={this.handleChange} label="Orgnization key (if present)" variant="outlined" color="primary" style={{ width: "100%" }} />
                                 <TextField required id="Email" onChange={this.handleChange} label="Email" variant="outlined" color="primary" style={{ width: "100%", marginTop: 10 }} />
                                 <TextField required id="Password" onChange={this.handleChange} label="Password" variant="outlined" color="primary" type="password" style={{ width: "100%", marginTop: 10 }} />
                             </form>
@@ -58,3 +62,9 @@ export class GridForm extends Component {
         )
     }
 }
+const mapDispatchesToProps = dispatch => {
+    return {
+        setEncryption: (Password, OrgKey) => dispatch(setUserEncryption(Password, OrgKey)),
+    }
+}
+export default connect(null, mapDispatchesToProps)(GridForm)

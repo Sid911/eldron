@@ -1,9 +1,10 @@
-export const SET_USER_INFO = "SET_USER_INFO";
+export const SET_ENCRYPTION = "SET_ENCRYPTION";
+export const SET_NAV = "SET_NAV"
 
 
-export function setUserInfo(Password, OrgKey) {
+export function setUserEncryption(Password, OrgKey) {
     return {
-        type: SETB_USER_INFO,
+        type: SET_ENCRYPTION,
         Password: Password,
         OrgKey: OrgKey,
     }

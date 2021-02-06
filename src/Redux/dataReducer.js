@@ -1,13 +1,19 @@
+import { SET_ENCRYPTION } from './Actions/dataAction'
+
 const initState = {
-    user: {
-        Password: "",
-        OrgKey: ""
-    },
+    Password: "",
+    OrgKey: "",
+
     recent: [],
     pinned: [],
 }
-const dataReducer = (state = initState, action) => {
-    return state
+function dataReducer(state = initState, action) {
+    switch (action.type) {
+        case SET_ENCRYPTION:
+            return { ...state, Password: action.Password, OrgKey: action.OrgKey }
+        default:
+            return state
+    }
 }
 
 export default dataReducer;
