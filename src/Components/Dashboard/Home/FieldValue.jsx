@@ -7,7 +7,7 @@ export default function FieldValue(props) {
         <Grid container>
             <Typography color="textSecondary" variant="caption">
                 {props.field} :
-        </Typography>
+            </Typography>
             <Typography color={second_color} variant="caption">
                 <Box fontWeight="fontWeightLight" marginLeft="10px">
                     {props.value}

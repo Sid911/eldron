@@ -1,4 +1,4 @@
-import firebase from "firebase/app"
+// import firebase from "firebase/app"
 export const SET_ENCRYPTION = "SET_ENCRYPTION";
 export const ADD_PINNED = "ADD_PINNED"
 export const ADD_RECENT = "ADD_RECENT"

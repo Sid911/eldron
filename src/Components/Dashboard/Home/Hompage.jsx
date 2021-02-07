@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Typography, Grid } from '@material-ui/core'
-import homepageSvg from "../../../homepageSvg.svg"
+import { Button, Grid } from '@material-ui/core'
 
 import firebase from "firebase/app";
 import UserInfo from './UserInfo';
