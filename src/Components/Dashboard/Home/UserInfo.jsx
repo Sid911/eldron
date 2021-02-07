@@ -16,7 +16,7 @@ export default function UserInfo(props) {
                     <Box fontWeight="bold" color={grey[400]}><Typewriter onInit={type} options={{ autoStart: true }} /></Box>
                 </Typography>
             </Grid>
-            <Divider style={{ width: "60%", backgroundColor: grey[100], padding: 2, marginTop: "10%", marginBottom: "10%" }} />
+            <Divider style={{ width: "90%", backgroundColor: grey[100], padding: 2, marginTop: "10%", marginBottom: "10%" }} />
             <FieldValue field="Organization" value={props.org} />
             <FieldValue field="Job Tittle" value={props.job} />
             <FieldValue field="Access Level" value={props.access} scolor="primary" />

@@ -20,7 +20,7 @@ export default function Navbar() {
     const user = useSelector(state => state.firestore.data.userDetails)
     const org = useSelector(state => state.firestore.data.orgDetails)
     return (
-        <Grid item xs={1} className={classes.full}>
+        <Grid item md={1} className={classes.full}>
             <Grid container className={classes.full}>
                 <Grid container className={classes.nav} style={{ marginRight: "50%" }} alignContent="space-around" justify="center">
                     <Grid item >

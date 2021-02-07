@@ -1,6 +1,5 @@
-import { Grid, LinearProgress } from '@material-ui/core'
+import { Grid, Hidden, LinearProgress } from '@material-ui/core'
 import React, { Component } from 'react'
-
 
 import Navbar from './Navbar/Navbar';
 import Homepage from './Home/Hompage';
@@ -14,7 +13,7 @@ export default class Dashboard extends Component {
     componentDidMount() {
         setTimeout(() => {
             this.setState({ isLoading: false })
-        }, 1000)
+        }, 2000)
     }
     render() {
         return (
@@ -26,7 +25,7 @@ export default class Dashboard extends Component {
                     </Grid>
                     :
                     <Grid container>
-                        <Navbar />
+                        <Hidden smDown><Navbar /></Hidden>
                         <Homepage />
                     </Grid>
                 }
