@@ -47,10 +47,10 @@ class GridForm extends Component {
                             </form>
                         </Grid>
                         <Grid container justify="space-between">
-                            <Button variant="outlined" color="primary">
+                            <Button style={{ borderRadius: 20 }} size="large" variant="outlined" color="primary">
                                 DISCOVER ELDRON
                             </Button>
-                            <Button variant="contained" color="primary" onClick={this.handleSubmit}>
+                            <Button style={{ borderRadius: 20 }} size="large" variant="contained" color="primary" onClick={this.handleSubmit}>
                                 LOGIN
                             </Button>
                         </Grid>

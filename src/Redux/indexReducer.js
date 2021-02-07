@@ -4,7 +4,7 @@ import thunkMiddleware from "redux-thunk";
 import { createLogger } from "redux-logger"
 //import storage from 'redux-persist/lib/storage'
 //import { persistStore, persistReducer } from 'redux-persist'
-import { firebase, init } from "../firebase"
+import { firebase, init } from "../Firebase/firebase"
 import { getFirestore, createFirestoreInstance } from "redux-firestore"
 import { getFirebase } from 'react-redux-firebase'
 

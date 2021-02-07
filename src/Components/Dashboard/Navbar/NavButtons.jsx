@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Typography } from '@material-ui/core'
+import { Button } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     selectedTab: {
@@ -18,9 +18,8 @@ function NavButtons(props) {
     var color = props.isSelected ? "primary" : "default"
     var variant = props.isSelected ? "contained" : "text"
     return (
-        <Button variant={variant} color={color} className={cl} disableElevation id={props.text}>
+        <Button variant={variant} color={color} className={cl} disableElevation onClick={props.onClick}>
             {props.icon}
-            {props.isExpanded ? <Typography color="inherit" variant="caption" style={{ marginLeft: 10 }}>{props.text}</Typography> : ""}
         </Button>
     )
 }

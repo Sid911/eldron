@@ -11,6 +11,9 @@ const theme = createMuiTheme({
 		primary: {
 			main: yellow["A400"]
 		},
+		secondary: {
+			main: "#1E1E1E"
+		}
 	},
 });
 
