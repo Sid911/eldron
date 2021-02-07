@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import RecentRow from './RecentRow';
 
-import empty from "../../../images/empty.json"
 class RecentViews extends Component {
     // state = {
     //     data: [{
