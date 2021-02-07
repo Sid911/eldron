@@ -19,14 +19,6 @@ class RecentViews extends Component {
     // }
 
     render() {
-        const defaultOptions = {
-            loop: false,
-            autoplay: true,
-            animationData: empty,
-            rendererSettings: {
-                preserveAspectRatio: "xMidYMid slice"
-            }
-        };
         return (
             <Grid container style={{ padding: "5%" }} direction="column">
                 <Typography variant="h5" color="textSecondary" >
