@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Box, Grid, Typography } from '@material-ui/core'
+import firebase from "firebase/app"
+import { Box, Button, Grid, Typography } from '@material-ui/core'
 import { connect } from 'react-redux'
 import UserInfo from './UserInfo';
 import { grey } from '@material-ui/core/colors';
@@ -14,15 +15,16 @@ class Hompage extends Component {
                         <Grid container direction="column" justify="space-between" style={{ height: "100%" }}>
                             <UserInfo name={this.props.user.name} org={this.props.org.orgName} job={this.props.user.jobTitle} access={this.props.user.accessLevel} />
                             <Grid style={{ padding: "5%" }}>
-                                <Typography color="textSecondary" >
-                                    <Box color={grey[100]}>Org Moto : </Box>
-                                    <Box fontWeight="fontWeightLight">{this.props.org.orgMoto}</Box>
+                                <Typography color="textSecondary" component="div">
+                                    <Box color={grey[100]} component="p">Org Moto : </Box>
+                                    <Box fontWeight="fontWeightLight" component="p">{this.props.org.orgMoto}</Box>
                                 </Typography>
                             </Grid>
                         </Grid>
                     </Grid>
                     <Grid item md={7} xs={12} style={{ height: "100%" }}>
                         <Grid container direction="column" justify="space-between" style={{ height: "100%" }}>
+                            <Button variant="outlined" onClick={() => { firebase.auth().signOut() }} >Sign Out</Button>
                             <RecentViews />
                         </Grid>
                     </Grid>

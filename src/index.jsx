@@ -7,9 +7,9 @@ import App from "./Components/App";
 import "./index.css"
 import CssBaseline from '@material-ui/core/CssBaseline';
 
-import { data, rrfProps } from "./Redux/indexReducer"
+import { data, rrfProps, persistor } from "./Redux/indexReducer"
 import { Provider } from 'react-redux'
-//import { PersistGate } from 'redux-persist/integration/react'
+import { PersistGate } from 'redux-persist/integration/react'
 import { ReactReduxFirebaseProvider } from 'react-redux-firebase'
 
 ReactDOM.render(
@@ -17,11 +17,13 @@ ReactDOM.render(
 		<CssBaseline />
 		<div style={{ height: "100%" }}>
 			<Provider store={data}>
-				<ReactReduxFirebaseProvider {...rrfProps}>
-					<ThemeProvider theme={Theme}>
-						<App />
-					</ThemeProvider>
-				</ReactReduxFirebaseProvider>
+				<PersistGate loading={null} persistor={persistor} >
+					<ReactReduxFirebaseProvider {...rrfProps}>
+						<ThemeProvider theme={Theme}>
+							<App />
+						</ThemeProvider>
+					</ReactReduxFirebaseProvider>
+				</PersistGate>
 			</Provider>
 		</div>
 	</React.StrictMode >,

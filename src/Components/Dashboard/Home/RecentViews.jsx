@@ -43,7 +43,6 @@ class RecentViews extends Component {
     }
 }
 const mapStatesToProps = (state) => {
-    console.log(state.data)
     return {
         recent: state.data.recent
     }
