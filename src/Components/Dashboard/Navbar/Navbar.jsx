@@ -27,14 +27,14 @@ export default function Navbar() {
                         <Avatar src={user ? user.profilePic : "bla"} >{user ? user.name[0] : "?"}</Avatar>
                     </Grid>
                     <Grid container justify="center">
-                        <NavButtons isSelected icon={<HomeOutlined fontSize="small" />} />
-                        {org ? org.hasIndexing ? <NavButtons icon={<SearchOutlined fontSize="small" />} /> : "" : ""}
-                        <NavButtons icon={<BookOutlined fontSize="small" />} />
-                        <NavButtons icon={<EqualizerOutlined fontSize="small" />} />
-                        {user ? user.accessLevel > 2 ? <NavButtons icon={<SupervisedUserCircleOutlined fontSize="small" />} /> : "" : ""}
+                        <NavButtons icon={<HomeOutlined fontSize="small" />} link="/" />
+                        {org ? org.hasIndexing ? <NavButtons icon={<SearchOutlined fontSize="small" />} link="/search" /> : "" : ""}
+                        <NavButtons icon={<BookOutlined fontSize="small" />} link="/database" />
+                        <NavButtons icon={<EqualizerOutlined fontSize="small" />} link="/stats" />
+                        {user ? user.accessLevel > 2 ? <NavButtons icon={<SupervisedUserCircleOutlined fontSize="small" />} link="/org" /> : "" : ""}
                     </Grid>
                 </Grid>
             </Grid>
-        </Grid >
+        </Grid>
     )
 }
