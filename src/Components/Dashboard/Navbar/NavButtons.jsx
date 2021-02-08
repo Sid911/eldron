@@ -1,5 +1,7 @@
 import React from 'react'
 import { Button } from '@material-ui/core'
+import { useHistory } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     selectedTab: {
@@ -14,13 +16,20 @@ const useStyles = makeStyles((theme) => ({
 
 function NavButtons(props) {
     const classes = useStyles();
-    var cl = props.isSelected ? classes.selectedTab : classes.nselectedTab
-    var color = props.isSelected ? "primary" : "default"
-    var variant = props.isSelected ? "contained" : "text"
+    const history = useHistory();
+    const loc = history.location.pathname
+    const color = loc === props.link ? "primary" : "default";
+    const variant = loc === props.link ? "contained" : "text";
+
+
+    function navigateToSearch() {
+        history.push(props.link);
+    }
+
     return (
-        <Button variant={variant} color={color} className={cl} disableElevation onClick={props.onClick}>
-            {props.icon}
-        </Button>
+        <Button variant={variant} color={color} className={classes.nselectedTab} disableElevation onClick={navigateToSearch}>
+            { props.icon}
+        </Button >
     )
 }
 

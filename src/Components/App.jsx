@@ -1,27 +1,29 @@
-import { Component } from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import LoginPage from "./Login/Login"
 import Dashboard from "./Dashboard/dashboard"
 import Splash from './SplashScreen/Splash';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
   state = {
     splash: true
   }
   componentDidMount() {
-    setTimeout(() => { this.setState({ splash: false }) }, 5500)
+    setTimeout(() => { this.setState({ splash: false }) }, 5250)
   }
+
   render() {
     var logged = this.props.logged;
-    var splash = this.state.splash
+    const splash = this.state.splash;
     return (
-      <BrowserRouter>
-        <Switch>
-          <Route exact path="" component={splash ? Splash : logged ? Dashboard : LoginPage} />
-        </Switch>
-      </BrowserRouter>
+      <React.Fragment>
+        <BrowserRouter>
+          {splash ? <Splash /> : logged ? <Dashboard /> : <LoginPage />}
+        </BrowserRouter>
+      </React.Fragment>
+
     );
   }
 }
