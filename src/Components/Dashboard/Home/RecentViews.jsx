@@ -19,7 +19,7 @@ class RecentViews extends Component {
 
     render() {
         return (
-            <Grid container style={{ padding: "5%" }} direction="column">
+            <Grid container direction="column">
                 <Typography variant="h5" color="textSecondary" >
                     <Box fontWeight="fontWeightLight" >Recently Viewed Profiles :</Box>
                 </Typography>

@@ -9,7 +9,8 @@ export default function UserInfo(props) {
         t.typeString("User").pauseFor(2500).deleteAll().typeString(props.name).start()
     }
     return (
-        <Grid container style={{ padding: "5%" }} direction="column" alignContent="space-between">
+
+        <Grid container direction="column" alignContent="space-between">
             <Grid item>
                 <Typography variant="h5" color="textPrimary" aria-orientation="horizontal">
                     Hi There,

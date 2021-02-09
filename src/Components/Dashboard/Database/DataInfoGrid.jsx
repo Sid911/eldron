@@ -8,16 +8,21 @@ import InfoTemplate from './InfoTemplate'
 
 function DataInfoGrid(props) {
     return (
+
         <Grid container direction="column" justify="space-between" style={{ height: "100%" }}>
+
             <Grid item >
                 <FieldValue variant="h5" field="Database" value="Info" scolor="primary" />
                 <Divider style={{ width: "100%", padding: 1, backgroundColor: grey[500], alignSelf: 'center', marginTop: 5 }} />
             </Grid>
-            <InfoTemplate Title="Orgnization" variant="caption" keyValue={Object.entries(props.org)} />
+            <InfoTemplate Title="Organization" variant="caption" keyValue={Object.entries(props.org)} />
             <InfoTemplate Title="Members" variant="caption" keyValue={Object.entries(props.membersDetails)} />
 
             <InfoTemplate Title="Patients" variant="caption" keyValue={Object.entries(props.patientsDetails)} />
-            <Button variant="outlined" color="primary">Download Entire Data</Button>
+            <Grid container justify="space-between" style={{ width: "100%" }}>
+                <Button variant="text" color="primary">Import</Button>
+                <Button variant="outlined" color="primary">Export</Button>
+            </Grid>
         </Grid>
     )
 }
