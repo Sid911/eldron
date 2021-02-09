@@ -59,7 +59,7 @@
     "flavor": "normal",
     "buildDir": "./build",
     "cacheDir": "./cache",
-    "macIcns": "./src/LOGO.icns",
+    "macIcns": "./src/logo.icns",
     "winIco": "./src/logo.ico"
   }
 }
