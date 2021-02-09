@@ -17,9 +17,9 @@ export default function UserInfo(props) {
                 </Typography>
             </Grid>
             <Divider style={{ width: "90%", backgroundColor: grey[100], padding: 2, marginTop: "10%", marginBottom: "10%" }} />
-            <FieldValue field="Organization" value={props.org} />
-            <FieldValue field="Job Tittle" value={props.job} />
-            <FieldValue field="Access Level" value={props.access} scolor="primary" />
+            <FieldValue field="Organization" value={props.org} variant="caption" />
+            <FieldValue field="Job Tittle" value={props.job} variant="caption" />
+            <FieldValue field="Access Level" value={props.access} scolor="primary" variant="caption" />
         </Grid>
     )
 }
