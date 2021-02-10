@@ -9,7 +9,7 @@ export default function InfoTemplate(props) {
                 {props.Title}
             </Typography>
             <br />
-            {props.keyValue.map((kv) => (<FieldValue field={kv[0]} value={kv[1].toString()} variant={props.variant} />))}
+            {props.keyValue.map((kv) => (<FieldValue field={kv[0]} value={kv[1].toString()} key={kv[0] + kv[1].toString()} variant={props.variant} />))}
         </Grid>
     )
 }

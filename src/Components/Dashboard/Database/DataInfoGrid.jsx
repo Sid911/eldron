@@ -20,8 +20,9 @@ function DataInfoGrid(props) {
 
             <InfoTemplate Title="Patients" variant="caption" keyValue={Object.entries(props.patientsDetails)} />
             <Grid container justify="space-between" style={{ width: "100%" }}>
-                <Button variant="text" color="primary">Import</Button>
-                <Button variant="outlined" color="primary">Export</Button>
+                <Button variant="text" color="default">Import</Button>
+                <Button variant="text" color="default">Export</Button>
+                <Button variant="contained" color="primary" onClick={props.patientClick}>Add Patient</Button>
             </Grid>
         </Grid>
     )
