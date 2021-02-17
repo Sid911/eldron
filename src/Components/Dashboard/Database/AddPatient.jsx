@@ -7,7 +7,7 @@ import { Autocomplete } from '@material-ui/lab'
 export class AddPatient extends Component {
     state = {
         name: "",
-
+        issueTags: null,
     }
     render() {
         return (
@@ -33,8 +33,8 @@ export class AddPatient extends Component {
                                         <Autocomplete
                                             freeSolo
                                             multiple
-                                            limitTags={2}
-                                            id="multiple-limit-tags"
+                                            limitTags={4}
+                                            id="issueTags"
                                             options={this.props.tags}
                                             renderTags={(value, getTagProps) =>
                                                 value.map((option, index) => (
