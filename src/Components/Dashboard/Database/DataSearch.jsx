@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import { Grid, Paper, InputBase, IconButton, Typography, FormControl, NativeSelect, Divider, Fade } from '@material-ui/core'
+import { Grid, Paper, InputBase, IconButton, FormControl, NativeSelect, Divider, Fade } from '@material-ui/core'
 import { Search, } from '@material-ui/icons';
 
 const root = {

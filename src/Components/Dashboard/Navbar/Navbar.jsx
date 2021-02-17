@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Avatar } from '@material-ui/core'
-import { HomeOutlined, SearchOutlined, BookOutlined, EqualizerOutlined, SupervisedUserCircleOutlined } from '@material-ui/icons'
+import { HomeOutlined, SearchOutlined, BookOutlined, EqualizerOutlined, SupervisedUserCircleOutlined, WatchLaterOutlined } from '@material-ui/icons'
 import NavButtons from './NavButtons';
 
 
@@ -29,6 +29,7 @@ export default function Navbar() {
                     <Grid container justify="center">
                         <NavButtons icon={<HomeOutlined fontSize="small" />} link="/" />
                         {org ? org.hasIndexing ? <NavButtons icon={<SearchOutlined fontSize="small" />} link="/search" /> : "" : ""}
+                        <NavButtons icon={<WatchLaterOutlined fontSize="small" />} link="/appointment" />
                         <NavButtons icon={<BookOutlined fontSize="small" />} link="/database" />
                         <NavButtons icon={<EqualizerOutlined fontSize="small" />} link="/stats" />
                         {user ? user.accessLevel > 2 ? <NavButtons icon={<SupervisedUserCircleOutlined fontSize="small" />} link="/org" /> : "" : ""}

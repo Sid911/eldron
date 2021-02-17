@@ -15,7 +15,7 @@ class Database extends Component {
                     <Fade in>
                         <Grid container style={{ height: "100%" }} direction="row">
                             <Grid item sm={4} xs={12} style={{ height: "100%" }}>
-                                <Paper style={{ height: "100%", padding: "5%", backgroundColor: "#1E1E1E" }}>
+                                <Paper style={{ height: "100%", padding: "5%", backgroundColor: "#000" }}>
                                     <DataInfoGrid patientClick={() => { this.setState({ openAddPatient: !this.state.openAddPatient }) }} />
                                 </Paper>
                             </Grid>

@@ -10,6 +10,7 @@ import Database from './Database/Database'
 import Stats from './Stats/Stats'
 import Organization from './Organization/Organization'
 import Loaddata from "../../Firebase/loadData";
+import Appointment from './Appointment/Appointment';
 
 export default class Dashboard extends Component {
     state = {
@@ -32,6 +33,7 @@ export default class Dashboard extends Component {
                     <Grid container>
                         <Route exact path="/" ><Hidden smDown><Navbar /></Hidden><Homepage /></Route>
                         <Route exact path="/search"><Hidden smDown><Navbar /></Hidden><Search /></Route>
+                        <Route exact path="/appointment"><Hidden smDown><Navbar /></Hidden><Appointment /></Route>
                         <Route exact path="/database"><Hidden smDown><Navbar /></Hidden><Database /></Route>
                         <Route exact path="/stats"><Hidden smDown><Navbar /></Hidden><Stats /></Route>
                         <Route exact path="/org"><Hidden smDown><Navbar /></Hidden><Organization /></Route>
