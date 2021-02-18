@@ -63,6 +63,7 @@ export class AddPatient extends Component {
                         issues: this.state.issueTags,
                         gender: this.state.gender,
                         notes: this.state.notes,
+                        age: this.state.age,
                         id: id,
                         profilePic: image,
                         hasClientApp: false
@@ -103,7 +104,7 @@ export class AddPatient extends Component {
                         <Grid container direction="column" style={{ height: "100%", padding: 10 }} justify="space-between">
                             <form spellCheck="false" autoComplete="off">
                                 <Grid container>
-                                    <Grid item sm={3} xs={12} direction="row">
+                                    <Grid item sm={3} xs={12}>
                                         <Grid container style={{ width: '100%' }}>
                                             <input
                                                 accept="image/*"
@@ -131,7 +132,7 @@ export class AddPatient extends Component {
                                                 variant="outlined"
                                                 color="secondary"
                                                 onChange={this.handleChange}
-                                                fullWidth="true" />
+                                                fullWidth />
                                             <Autocomplete
                                                 freeSolo
                                                 multiple
