@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import firebase from 'firebase/app'
 
 import { connect } from 'react-redux'
-import { Grid, Button, Avatar, Paper, Box, TextField, Chip, Divider, IconButton } from "@material-ui/core";
+import { Grid, Button, Avatar, Paper, Box, TextField, Chip, Divider, IconButton, LinearProgress } from "@material-ui/core";
 import { Autocomplete } from '@material-ui/lab'
 import { CameraAltOutlined } from '@material-ui/icons';
 
@@ -32,42 +32,61 @@ export class AddPatient extends Component {
     }
     handleIssueChange = (e, value) => {
         this.setState({
-            [e.target.id]: value,
+            issueTags: value,
         })
     }
     handleSubmit = () => {
-        // const metadata = {
-        //     contentType: this.state.image.type,
-        // };
+        this.setState({ isUploading: true })
+        const metadata = {
+            contentType: this.state.image.type,
+        };
         const id = "TO" + this.props.totalPatients
-        // const storageRef = firebase.storage().ref();
-        // const uploadTask = storageRef.child('testorg/patients/' + id + '/' + id + "Pic.jpg").put(this.state.image, metadata)
-        // var image = null;
-        // uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
-        //     (snapshot) => {
-        //         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        //         console.log("Upload is" + progress + '% done')
-        //     }, (error) => {
-        //         console.error("problem in uploading", error.code);
-        //     }, () => {
-        //         uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-        //             console.log('File available at', downloadURL);
-        //             image = downloadURL;
-        //         });
-        //     }
-        // )
-        const user = {
-            name: this.state.name,
-            height: this.state.height,
-            weight: this.state.weight,
-            issues: this.state.issueTags,
-            notes: this.state.notes,
-            id: id,
-            hasClientApp: false
-        }
-        const db = firebase.firestore()
-        db.collection("testorg").doc("orgPatients").collection("patients").doc(user.id).set(user)
-        console.log(this.state)
+        const firebaseStore = firebase.storage()
+        const storageRef = firebaseStore.ref();
+        const uploadTask = storageRef.child('testorg/patients/' + id + '/' + id + "Pic.jpg").put(this.state.image, metadata)
+        var image = null;
+        uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED,
+            (snapshot) => {
+                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                console.log("Upload is" + progress + '% done')
+            }, (error) => {
+                console.error("problem in uploading", error.code);
+                this.setState({ isUploading: false })
+            }, () => {
+                uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+                    console.log('File available at', downloadURL);
+                    image = downloadURL;
+                    const user = {
+                        name: this.state.name,
+                        height: this.state.height,
+                        weight: this.state.weight,
+                        issues: this.state.issueTags,
+                        gender: this.state.gender,
+                        notes: this.state.notes,
+                        id: id,
+                        profilePic: image,
+                        hasClientApp: false
+                    }
+                    const db = firebase.firestore()
+                    db.collection("testorg").doc("orgPatients").collection("patients").doc(user.id).set(user)
+
+                    if (this.state.gender === "male") {
+                        db.collection("testorg").doc("orgPatients").set({
+                            totalPatients: this.props.totalPatients + 1,
+                            malePatients: this.props.malePatients + 1,
+                        }, { merge: true })
+                    } else if (this.state.gender === "female") {
+                        db.collection("testorg").doc("orgPatients").set({
+                            totalPatients: this.props.totalPatients + 1,
+                            femalePatients: this.props.femalePatients + 1,
+                        }, { merge: true })
+                    }
+                    this.setState({ isUploading: false })
+                });
+            }
+        )
+
+
     }
 
     handleProfileClick = e => {
@@ -142,13 +161,17 @@ export class AddPatient extends Component {
                                 </Grid>
                             </form>
                             <Divider variant="fullWidth" />
-                            <Grid container direction="column" alignItems="flex-end" >
-
-                                <TextField id="notes" label="Patient Notes" multiline variant="filled" fullWidth onChange={this.handleChange} />
-                                <Button variant="contained" style={{ width: 180, marginTop: 20 }} onClick={this.handleSubmit} >Add To database</Button>
+                            <Grid container direction="row" justify="space-between" alignItems="center">
+                                <Grid item sm={9} xs={12} style={{ padding: 10 }}>
+                                    <TextField id="notes" label="Patient Notes" multiline variant="filled" fullWidth onChange={this.handleChange} />
+                                </Grid>
+                                <Grid item sm={3} xs={12} alignContent="center" style={{ padding: 5 }}>
+                                    <Button variant="contained" onClick={this.handleSubmit} >Add To database</Button>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Box>
+                    {this.state.isUploading ? <LinearProgress style={{ width: "100%" }} /> : ""}
                 </Paper>
             </Grid >
         )
@@ -157,7 +180,9 @@ export class AddPatient extends Component {
 const mapStatesToProps = (state) => {
     return {
         tags: state.firestore.data.orgDetails.issueTags,
-        totalPatients: state.firestore.data.testorg.orgPatients.totalPatients
+        totalPatients: state.firestore.data.testorg.orgPatients.totalPatients,
+        malePatients: state.firestore.data.testorg.orgPatients.malePatients,
+        femalePatients: state.firestore.data.testorg.orgPatients.femalePatients
     }
 }
 export default connect(mapStatesToProps)(AddPatient)

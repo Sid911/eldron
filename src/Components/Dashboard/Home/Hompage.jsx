@@ -30,9 +30,7 @@ class Hompage extends Component {
                                     Today's appointments:
                                 </Typography>
                                 <Paper style={{ backgroundColor: "#1E1E1E", padding: 10 }}>
-                                    <Typography variant="caption" align="center" color="textSecondary">
-                                        No appointments for today! 🕵🏻‍♀️
-                                </Typography>
+                                    <Typography variant="caption" align="center" color="textSecondary">No appointments for today! 🕵🏻‍♀️</Typography>
                                 </Paper>
                             </Grid>
                             <RecentViews />

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import { Grid, Paper, InputBase, IconButton, FormControl, NativeSelect, Divider, Fade } from '@material-ui/core'
 import { Search, } from '@material-ui/icons';
+import DataSearchResults from './DataSearchResults';
 
 const root = {
     padding: '2px 4px',
@@ -15,7 +16,14 @@ const root = {
 
 class DataSearch extends Component {
     state = {
-
+        searchTerm: "",
+        searchField: "name",
+    }
+    handleChange = (e) => {
+        var value = isNaN(parseInt(e.target.value)) ? e.target.value : parseInt(e.target.value)
+        this.setState({
+            [e.target.id]: value,
+        })
     }
     render() {
         return (
@@ -24,7 +32,7 @@ class DataSearch extends Component {
                     <Paper component="form" style={root}>
                         <Grid container justify="space-between" alignContent="center" style={{ height: "100%", padding: 5 }}>
                             <FormControl style={{ width: "20%", margin: 5 }}>
-                                <NativeSelect id="query_select">
+                                <NativeSelect id="searchField" onChange={this.handleChange}>
                                     <option value={"name"}>Name</option>
                                     <option value={"mobile_no"}>Mobile No.</option>
                                 </NativeSelect>
@@ -33,6 +41,8 @@ class DataSearch extends Component {
                             <InputBase
                                 style={{ flex: 1, marginLeft: 10 }}
                                 placeholder="Search Database"
+                                id="searchTerm"
+                                onChange={this.handleChange}
                                 inputProps={{ 'aria-label': 'search database' }}
                             />
 
@@ -42,6 +52,12 @@ class DataSearch extends Component {
                         </Grid>
                     </Paper>
                 </Fade>
+                <Grid container direction="column" style={{ marginTop: 10 }}>
+                    <DataSearchResults />
+                    <DataSearchResults />
+                    <DataSearchResults />
+                    <DataSearchResults />
+                </Grid>
             </Grid>
         )
     }
