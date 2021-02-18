@@ -5,7 +5,7 @@ export class Appointment extends Component {
     render() {
         return (
             <div>
-
+                Appointment page
             </div>
         )
     }

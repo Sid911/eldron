@@ -5,6 +5,7 @@ import { grey } from '@material-ui/core/colors'
 
 import FieldValue from '../Home/FieldValue'
 import InfoTemplate from './InfoTemplate'
+import { AddOutlined, SearchOutlined } from '@material-ui/icons'
 
 function DataInfoGrid(props) {
     return (
@@ -20,9 +21,8 @@ function DataInfoGrid(props) {
 
             <InfoTemplate Title="Patients" variant="caption" keyValue={Object.entries(props.patientsDetails)} />
             <Grid container justify="space-between" style={{ width: "100%" }}>
-                <Button variant="text" color="default">Import</Button>
-                <Button variant="text" color="default">Export</Button>
-                <Button variant="contained" color="primary" onClick={props.patientClick}>Add Patient</Button>
+                <Button variant="outlined" color={!props.b ? "primary" : "default"} onClick={props.searchClick} startIcon={<SearchOutlined />}>Search</Button>
+                <Button variant="outlined" color={props.b ? "primary" : "default"} onClick={props.patientClick} startIcon={<AddOutlined />}>Add Patient</Button>
             </Grid>
         </Grid>
     )

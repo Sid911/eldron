@@ -4,26 +4,26 @@ import { connect } from "react-redux";
 import RecentRow from './RecentRow';
 
 class RecentViews extends Component {
-    // state = {
-    //     data: [{
-    //         name: "Sid", age: "18", gender: "Male", no: "342543542", uid: "3892fpbbidfaufdg",
-    //         history: [{ key: "dahofadfsnv", date: "blabla", issue: "brain", attend: "dr.peanut Brain" },
-    //         { key: "afdhiosfnvbndsfa", date: "blabla2", issue: "liver ", attend: "dr.big Brain" }]
-    //     },
-    //     {
-    //         name: "Goku", age: "17", gender: "Male", no: "342543542", uid: "asdffff435ga",
-    //         history: [{ key: "dahofadfsnv", date: "blabla", issue: "brain", attend: "dr.peanut Brain" },
-    //         { key: "afdhiosfnvbndsfa", date: "blabla2", issue: "liver ", attend: "dr.big Brain" }]
-    //     }]
-    // }
+    state = {
+        data: [{
+            name: "Sid", age: "18", gender: "Male", no: "342543542", uid: "3892fpbbidfaufdg",
+            history: [{ key: "dahofadfsnv", date: "blabla", issue: "brain", attend: "dr.peanut Brain" },
+            { key: "afdhiosfnvbndsfa", date: "blabla2", issue: "liver ", attend: "dr.big Brain" }]
+        },
+        {
+            name: "Goku", age: "17", gender: "Male", no: "9725435675", uid: "asdffff435ga",
+            history: [{ key: "dahofadfsnv", date: "blabla", issue: "brain", attend: "dr.peanut Brain" },
+            { key: "afdhiosfnvbndsfa", date: "blabla2", issue: "liver ", attend: "dr.big Brain" }]
+        }]
+    }
 
     render() {
         return (
             <Grid container direction="column">
-                <Typography variant="h5" color="textSecondary" >
+                <Typography color="textSecondary" >
                     <Box fontWeight="fontWeightLight" >Recently Viewed Profiles :</Box>
                 </Typography>
-                {this.props.recent ?
+                {!this.state.data ?
                     <Typography variant="overline" color="textPrimary" >
                         No Recently Viewed files on the device ❌
                 </Typography>
@@ -31,7 +31,7 @@ class RecentViews extends Component {
                     <TableContainer component={Paper} style={{ marginTop: 20, backgroundColor: "#1E1E1E" }}>
                         <Table aria-label="collapsible recent table">
                             <TableBody>
-                                {this.props.recent.map((row) => (
+                                {this.state.data.map((row) => (
                                     <RecentRow key={row.uid} row={row} />
                                 ))}
                             </TableBody>
