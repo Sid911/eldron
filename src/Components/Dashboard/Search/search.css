@@ -1,1 +1,9 @@
-
+.ais-Hits-item {
+	background: #181818 !important;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.ais-SearchBox-input {
+	background-color: #181818;
+	border: 1px solid #000;
+}
