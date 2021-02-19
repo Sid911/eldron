@@ -42,7 +42,7 @@ export default class Search extends Component {
                             </Grid>
                             <Grid item sm={9}>
                                 <Grid container direction="column" justify="flex-end" style={{ height: "100%" }}>
-                                    <SearchBox showLoadingIndicator searchAsYouType={false} />
+                                    <SearchBox showLoadingIndicator />
                                 </Grid>
                             </Grid>
                         </Grid>
