@@ -16,7 +16,7 @@ class Database extends Component {
     }
     render() {
         return (
-            <Grid item sm={11} style={{ padding: 10, height: "100%", maxHeight: window.screen.availHeight }}>
+            <Grid item sm={11} xs={12} style={{ padding: 10, height: "100%", maxHeight: window.screen.availHeight }}>
                 <Box height="100%" overflow="auto">
                     <Fade in>
                         <Grid container style={{ height: "100%" }} direction="row">

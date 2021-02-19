@@ -14,9 +14,17 @@ function DataSearchResults(props) {
                 <Grid item sm={10}>
                     <Paper style={{ backgroundColor: "#1E1E1E", flexGrow: 1, padding: 10 }}>
                         <Grid container alignContent="center">
-                            <Grid item xs={6}>
+                            <Grid item xs={4}>
                                 <Typography color="textSecondary" >
                                     <Box component="span" fontWeight="fontWeightLight">{props.name}</Box>
+                                </Typography>
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Divider variant="fullWidth" orientation="vertical" />
+                            </Grid>
+                            <Grid item xs={1}>
+                                <Typography color="textSecondary" >
+                                    <Box component="span" fontWeight="fontWeightLight">{props.age}</Box>
                                 </Typography>
                             </Grid>
                             <Grid item xs={1}>

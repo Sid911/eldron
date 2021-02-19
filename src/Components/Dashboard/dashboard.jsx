@@ -11,6 +11,7 @@ import Stats from './Stats/Stats'
 import Organization from './Organization/Organization'
 import Loaddata from "../../Firebase/loadData";
 import Appointment from './Appointment/Appointment';
+import PatientProfile from './Profile/PatientProfile';
 
 export default class Dashboard extends Component {
     state = {
@@ -37,6 +38,7 @@ export default class Dashboard extends Component {
                         <Route exact path="/database"><Hidden smDown><Navbar /></Hidden><Database /></Route>
                         <Route exact path="/stats"><Hidden smDown><Navbar /></Hidden><Stats /></Route>
                         <Route exact path="/org"><Hidden smDown><Navbar /></Hidden><Organization /></Route>
+                        <Route path="/patient/:id" component={PatientProfile} />
                     </Grid>
                 }
             </Grid>

@@ -72,7 +72,7 @@ function DataSearch() {
                     searched ?
                         resultsfound ?
                             searchResult.map((result) => (
-                                <DataSearchResults src={result.profilePic} name={result.name} mobile={result.mobile_no} key={result.id} />
+                                <DataSearchResults src={result.profilePic} name={result.name} mobile={result.mobile_no} key={result.id} age={result.age} />
                             ))
                             :
                             <Paper style={{ backgroundColor: "#1E1E1E", padding: 20 }}>

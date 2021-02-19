@@ -10,6 +10,7 @@ import { CameraAltOutlined } from '@material-ui/icons';
 export class AddPatient extends Component {
     state = {
         name: "",
+        mobile: null,
         image: null,
         height: null,
         weight: null,
@@ -63,6 +64,7 @@ export class AddPatient extends Component {
                         issues: this.state.issueTags,
                         gender: this.state.gender,
                         notes: this.state.notes,
+                        mobile_no: this.state.mobile,
                         age: this.state.age,
                         id: id,
                         profilePic: image,
@@ -115,7 +117,7 @@ export class AddPatient extends Component {
                                             />
                                             <label htmlFor="contained-button-file">
                                                 {!this.state.imageSelected ?
-                                                    <IconButton style={{ width: 120, height: 120 }} component="span" color="primary">
+                                                    <IconButton style={{ width: 120, height: 120, backgroundColor: "#000" }} component="span" color="primary">
                                                         <CameraAltOutlined />
                                                     </IconButton> :
                                                     <Avatar variant="rounded" style={{ width: 120, height: 120 }} component="span" src={this.state.image.path}>?</Avatar>
@@ -125,21 +127,8 @@ export class AddPatient extends Component {
                                     </Grid>
                                     <Grid item sm={9} xs={12} >
                                         <Grid container justify="space-evenly" direction="column">
-                                            <TextField
-                                                id="name"
-                                                size="small"
-                                                label="Name"
-                                                variant="outlined"
-                                                color="secondary"
-                                                onChange={this.handleChange}
-                                                fullWidth />
-                                            <Autocomplete
-                                                freeSolo
-                                                multiple
-                                                limitTags={4}
-                                                id="issueTags"
-                                                options={this.props.tags}
-                                                onChange={this.handleIssueChange}
+                                            <TextField id="name" size="small" label="Name" variant="outlined" color="secondary" onChange={this.handleChange} fullWidth />
+                                            <Autocomplete freeSolo multiple limitTags={4} id="issueTags" options={this.props.tags} onChange={this.handleIssueChange}
                                                 renderTags={(value, getTagProps) =>
                                                     value.map((option, index) => (
                                                         <Chip variant="outlined" label={option}  {...getTagProps({ index })} />
@@ -149,7 +138,8 @@ export class AddPatient extends Component {
                                                     <TextField {...params} variant="outlined" label="Issues" color="primary" style={{ marginTop: 20 }} />
                                                 )}
                                             />
-                                            <Grid container justify="space-between" style={{ marginTop: "5%" }}>
+                                            <TextField id="mobile" size="small" label="Mobile No." variant="outlined" color="secondary" onChange={this.handleChange} fullWidth style={{ marginTop: "5%" }} />
+                                            <Grid container justify="space-between">
                                                 <TextField variant="outlined" id="age" label="Age" size="small" style={{ marginTop: 20, width: "45%" }} onChange={this.handleChange} />
                                                 <TextField variant="outlined" id="gender" label="Gender" size="small" style={{ marginTop: 20, width: "45%" }} onChange={this.handleChange} />
                                             </Grid>

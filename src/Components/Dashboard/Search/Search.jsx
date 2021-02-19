@@ -1,12 +1,16 @@
-import { Typography } from '@material-ui/core'
+import { Typography, Grid, Paper } from '@material-ui/core'
 import React, { Component } from 'react'
+import Powered from './powered'
 
 export default class Search extends Component {
     render() {
         return (
-            <div>
-                <Typography color="textPrimary">Search Page</Typography>
-            </div>
+            <Grid item sm={11} xs={12} style={{ padding: 10 }}>
+                <Grid container direction="row" justify="space-between">
+                    <Powered />
+
+                </Grid>
+            </Grid>
         )
     }
 }
