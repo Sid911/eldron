@@ -22,7 +22,7 @@ class DiseaseGraphs extends Component {
         return (
             <Grid container style={{ flexGrow: 1 }}>
                 <Grid item md={8} sm={12}>
-                    <XYPlot width={500} height={300}>
+                    <XYPlot width={600} height={300}>
                         <HorizontalGridLines />
                         <VerticalGridLines />
                         <XAxis style={{ text: { stroke: 'none', fill: '#ffff', fontSize: 12 } }} />
