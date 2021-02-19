@@ -3,6 +3,7 @@ import React from 'react'
 
 import StatsHead from './StatsHead'
 import GraphTabs from './graphTabs'
+import '../../../../node_modules/react-vis/dist/style.css'
 
 function Stats() {
     return (
