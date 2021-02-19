@@ -11,9 +11,9 @@ import {
 import { Grid } from '@material-ui/core'
 
 function AppointmentGraphs() {
-    const greenData = [{ x: 'Jan', y: 2 }, { x: 'Feb', y: 3 }, { x: 'Mar', y: 4 }, { x: 'Apr', y: 5 },  { x: 'May', y: 6 },  { x: 'Jun', y: 7 },  { x: 'Jul', y: 8 },  { x: 'Aug', y: 9 },  { x: 'Sep', y: 10 },  { x: 'Oct', y: 11 },  { x: 'Nov', y: 12 },  { x: 'Dec', y: 13 }  ];
+    const greenData = [{ x: 'Jan', y: 2 }, { x: 'Feb', y: 3 }, { x: 'Mar', y: 4 }, { x: 'Apr', y: 5 },  { x: 'May', y: 6 },  { x: 'Jun', y: 7 },  { x: 'Jul', y: 8 },  { x: 'Aug', y: 9 },  { x: 'Sep', y: 10 },  { x: 'Oct', y: 9 },  { x: 'Nov', y: 8 },  { x: 'Dec', y: 7 }  ];
 
-    const blueData = [{ x: 'Jan', y: 1 }, { x: 'Feb', y: 2 }, { x: 'Mar', y: 3 }, { x: 'Apr', y: 4 },  { x: 'May', y: 5 },  { x: 'Jun', y: 6 },  { x: 'Jul', y: 7 },  { x: 'Aug', y: 8 },  { x: 'Sep', y: 9 },  { x: 'Oct', y: 10 },  { x: 'Nov', y: 11 },  { x: 'Dec', y: 12 }, ];
+    const blueData = [{ x: 'Jan', y: 1 }, { x: 'Feb', y: 2 }, { x: 'Mar', y: 3 }, { x: 'Apr', y: 4 },  { x: 'May', y: 5 },  { x: 'Jun', y: 6 },  { x: 'Jul', y: 7 },  { x: 'Aug', y: 8 },  { x: 'Sep', y: 9 },  { x: 'Oct', y: 8 },  { x: 'Nov', y: 7 },  { x: 'Dec', y: 6 }, ];
     const ITEMS = [
         'Male',
         'Female',
