@@ -1,4 +1,4 @@
-import { Typography, Grid, Paper } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import React, { Component } from 'react'
 import Powered from './powered'
 

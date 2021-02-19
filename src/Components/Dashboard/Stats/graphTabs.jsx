@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { Tabs, Tab, Box, Typography } from '@material-ui/core'
-import { useSelector } from 'react-redux'
 import { makeStyles } from '@material-ui/core/styles';
 
 import DiseaseGraphs from './Graphs/DiseaseGraphs'
@@ -75,13 +74,13 @@ function GraphTabs() {
                     <Tab label="Age" {...a11yProps(5)} />
                     <Tab label="Public Data 🌎" {...a11yProps(6)} />
                 </Tabs>
-                <TabPanel value={value} index={0}><DiseaseGraphs /></TabPanel>
-                <TabPanel value={value} index={1}><AppointmentGraphs /></TabPanel>
-                <TabPanel value={value} index={2}><PatientsGraphs /></TabPanel>
-                <TabPanel value={value} index={3}><Employee /></TabPanel>
-                <TabPanel value={value} index={4}>Item Five</TabPanel>
-                <TabPanel value={value} index={5}>Item Six</TabPanel>
-                <TabPanel value={value} index={6}>Item Seven</TabPanel>
+                <TabPanel value={value} index={0} style={{ flexGrow: 1 }}><DiseaseGraphs /></TabPanel>
+                <TabPanel value={value} index={1} style={{ flexGrow: 1 }}><AppointmentGraphs /></TabPanel>
+                <TabPanel value={value} index={2} style={{ flexGrow: 1 }}><PatientsGraphs /></TabPanel>
+                <TabPanel value={value} index={3} style={{ flexGrow: 1 }}><Employee /></TabPanel>
+                <TabPanel value={value} index={4} style={{ flexGrow: 1 }}>Item Five</TabPanel>
+                <TabPanel value={value} index={5} style={{ flexGrow: 1 }}>Item Six</TabPanel>
+                <TabPanel value={value} index={6} style={{ flexGrow: 1 }}>Item Seven</TabPanel>
             </div>
         </Typography>
     );
